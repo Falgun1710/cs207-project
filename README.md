@@ -17,6 +17,21 @@
  
  /READ.me -  summery of the project
  
+ # Requirements
+ Arduino - 1
+ breadvoard - 1
+ Motion Senser PIR Grove  - 1 
+ 12C LCD Display  - 1
+ Ultrasonic sensor(HCSR04) - 1
+ piezo speaker - 1
+ LED - 1 
+ Resistor - 1
+ Jump wires
+ 
+ # ScheMatic and diagram 
+ This is the Diagram of the ciruit 
+ 
+ 
  
  
  
