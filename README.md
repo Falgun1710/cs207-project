@@ -19,18 +19,41 @@
  
  # Requirements
  Arduino - 1
+ 
  breadvoard - 1
+ 
  Motion Senser PIR Grove  - 1 
+ 
  12C LCD Display  - 1
+ 
  Ultrasonic sensor(HCSR04) - 1
+ 
  piezo speaker - 1
+ 
  LED - 1 
+ 
  Resistor - 1
+ 
  Jump wires
  
  # ScheMatic and diagram 
  This is the Diagram of the ciruit 
  
+![Project final](https://user-images.githubusercontent.com/72895806/101531322-b6b2ab80-3958-11eb-8248-de5151d2dd06.jpg)
+
+This is the Schematic diagram 
+
+
+# usage
+
+This can ne used at departmental store the moniter the amount of people entering and can be used in houses to avoid tresspassers 
+
+# Credits
+
+Dr. Trevor Tomesh
+
+Alex clarke
+![Scamatic final](https://user-images.githubusercontent.com/72895806/101531336-b9150580-3958-11eb-8689-4092636c06c8.jpg)
  
  
  
