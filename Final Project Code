@@ -1,0 +1,108 @@
+/*   Name       - Divy dave
+     Student ID - 200422115
+
+
+     This is the Final Codo for my Project Motion Sensor Security
+
+     It start with the the Library which is Taken by Github Adress which are mention in the Project writup
+*/
+
+ #include <HCSR04.h>                                         /* This is the library which is used for the ultrasonic sensor */
+ #include <LiquidCrystal_I2C.h>                              /* This is the library which is used for the 12C LCD display */
+ #include <Wire.h>
+
+
+
+ LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 16, 2);     /* THis finction sets the address for the for LCD to 27X0 for the display */
+
+
+ int  led = 10;                                              /* Led is connected to pin 6  */
+ const int  Motionsensor = 4;                                /* the Pin for the Motion sensor which is D1 is connected to 4  */
+ int  buzzer = 6;                                            /* The buzzer is connected to pin 6 */
+ const int  TrigPin = 8;                                     /* One of the Pin for the Ultrasonic sensor is connected to 9 which is tric */
+ const int  EchoPin = 9;                                     /* Another of the Pin for the Ultrasonic sensor is connected to 9 which is echo */
+ int  Sensorval = 0;                                         /* we are the intisalizing the val for the sensor to 0 */
+ long  Time;                                                 /* time factor is used in Ultrasonic sensor for the time factor */
+ int  distanceinInch;                                        /* This Value helps to get the values in the inches */
+
+
+
+ void setup() {
+  lcd.begin(16, 2);                                         /* this set  values  the LCD for display */
+  pinMode(led, OUTPUT);                                     /* this initialize the output for led */
+  pinMode(Motionsensor, INPUT);                             /* this initialize the motionsensor  for the value for the motion sensor  */
+  pinMode(buzzer, OUTPUT);                                  /* this initialize  as an input for the buzzer */
+  lcd.init();                                               /* this will   initate the value for the LCD */
+  lcd.backlight();
+  pinMode(TrigPin, OUTPUT);                                 /* Trig pin is set to give the output for the snnsor */
+  pinMode(EchoPin, INPUT);                                  /* Echo pin is set to give the inut form the sensoe */
+ } 
+
+
+
+ void loop()
+{ /* Start of the program which sense the program and give the putput */
+  Sensorval = digitalRead(Motionsensor);                    /* It read the valus form the server */
+  if (Sensorval == HIGH)                                    /* check if the sensor is HIGH */
+  {
+    /* This Will create lights to Blink and Buzzer */
+   
+    digitalWrite(led, HIGH);                                /* If the value is high led will turn On  */
+    delay (100);                                            /* Delay of 100 microsecond  */
+     digitalWrite(led, LOW);                                /* LED is turned off to create the blink */
+     delay (100);                                           /* Delay of 100 microsecond  */
+     digitalWrite(led, HIGH);                               /* LED is turned Onn to create the blink */
+    tone(buzzer, 1000);                                     /* If the value is buzzer led will turn On  */
+     delay (100);                                           /* Delay of 100 microsecond  */
+     noTone(buzzer);                                        /* If the value is buzzer  will turn Off  */
+      delay (100);                                          /* Delay of 100 microsecond  */
+     tone(buzzer, 1000);                                    /* If the value is buzzer led will turn On  */
+     
+    lcd.setCursor(2, 0);                                    /* This function set the rows and coloumn */
+    lcd.print("Motion    ");                                /* This Function "display Motion" on the screen */
+
+    /* The below code will Help to mesure the distance 
+     *  
+     *  reference for this code is taken form https://www.tutorialspoint.com/arduino/arduino_ultrasonic_sensor.htm 
+     *  
+     */
+    /*  This will set the Trigpin to to low for two micro seconds  */
+    digitalWrite(TrigPin, LOW);                             /* Trig pin is set to low */
+    delayMicroseconds(2);                                   /* set or two microsecond */
+
+    /*  This will set the trigPin Back to high for 10 microseconds */
+    digitalWrite(TrigPin, HIGH);                            /* Trig pin is set to High */
+    delayMicroseconds(10);                                  /* set or 10 microsecond */
+
+    /*  This will set the trigPin Back */
+
+    digitalWrite(TrigPin, LOW);                             /* Set to Low */
+
+    /* This check the input in the ECho Pin */
+
+    Time = pulseIn(EchoPin, HIGH);                          /* the time function is checking the time taken for the sonic wavw to hit back
+
+    /* Calculating the distance */
+
+    distanceinInch = Time * 0.034 / 2;                      /* This is the Calculation for the distance in inches */
+
+    // Prints the distance on the Serial Monitor
+    lcd.setCursor(0, 1);                                    /* Sets the rows and the coloums for the display */
+    lcd.print("Distance: ");                                /* Display "distance" */
+    lcd.print(distanceinInch);                              /* Display the result of the calculation */
+    lcd.print("inch");                                      /* Display in Inches at the end */
+    delay(10);
+  }
+
+  else                                                     /* If the value is not high for the sensor the this loop will Run */
+ {
+  digitalWrite(led, LOW);                                  /* If the value is low led will turn Off  */
+  noTone(buzzer);                                          /* If the buzzeer will turn off  */
+  lcd.setCursor(2, 0);                                     /* This function set the rows and coloumn */
+  lcd.print("No Motion");                                  /* This Function display  'No Motion" on the screen */
+  lcd.setCursor(0 , 1 );                                   /* This function set the rows and coloumn */
+  lcd.print("                 ");                          /* This Function display  nothing  */
+   
+ }
+
+ }
