@@ -42,6 +42,7 @@
 ![Project final](https://user-images.githubusercontent.com/72895806/101531322-b6b2ab80-3958-11eb-8248-de5151d2dd06.jpg)
 
 This is the Schematic diagram 
+![Scamatic final](https://user-images.githubusercontent.com/72895806/101531336-b9150580-3958-11eb-8689-4092636c06c8.jpg)
 
 
 # usage
