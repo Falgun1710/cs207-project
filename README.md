@@ -6,10 +6,18 @@
  
  # Repsitory Content
  /Basecode  -  code taken from reference site 
+ 
  /HCSR04-1.0.0 -  library need for the project
+ 
  /LiquidCrystal_I2C -  library need for the project 
+ 
  /Pictures for the project
+ 
  /Final_Projectcs207 - Final code for the Project
+ 
+ /READ.me -  summery of the project
+ 
+ 
  
  
 
