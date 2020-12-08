@@ -54,12 +54,4 @@ This can ne used at departmental store the moniter the amount of people entering
 Dr. Trevor Tomesh
 
 Alex clarke
-![Scamatic final](https://user-images.githubusercontent.com/72895806/101531336-b9150580-3958-11eb-8689-4092636c06c8.jpg)
- 
- 
- 
- 
-
- 
- 
  
