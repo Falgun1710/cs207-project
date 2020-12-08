@@ -5,7 +5,12 @@
  ![model photo](https://user-images.githubusercontent.com/72895806/101530851-12c90000-3958-11eb-9ebd-646b4b102620.jpeg)
  
  # Repsitory Content
- /Basecode     code taken from reference site 
+ /Basecode  -  code taken from reference site 
+ /HCSR04-1.0.0 -  library need for the project
+ /LiquidCrystal_I2C -  library need for the project 
+ /Pictures for the project
+ /Final_Projectcs207 - Final code for the Project
+ 
  
 
  
